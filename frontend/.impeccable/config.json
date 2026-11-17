@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "ai-color-palette",
+        "value": "*",
+        "files": [
+          "src/components/sections/Shift.tsx"
+        ],
+        "createdAt": "2026-11-13T11:13:46.951Z",
+        "reason": "user confirmed: brand colours must come from meriity.com, whose brand violets are #2F057B/#6441C1/#7360F2"
+      }
+    ]
+  }
+}

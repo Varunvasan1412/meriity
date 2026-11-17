@@ -1,0 +1,154 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-13T00:00:00Z",
+  "title": "Design System: Meriity",
+  "extensions": {
+    "colorMeta": {
+      "violet-deep": { "role": "primary", "displayName": "Meriity Deep Violet", "canonical": "#2f057b", "tonalRamp": ["#1a0347", "#2f057b", "#3d0f94", "#6441c1", "#7360f2", "#cfc6f7", "#e9e4fb", "#f5f3fb"] },
+      "violet-night": { "role": "primary", "displayName": "Violet Night", "canonical": "#1a0347", "tonalRamp": ["#1a0347", "#2f057b", "#3d0f94", "#6441c1", "#7360f2", "#cfc6f7", "#e9e4fb", "#f5f3fb"] },
+      "violet-raised": { "role": "primary", "displayName": "Raised Violet", "canonical": "#3d0f94", "tonalRamp": ["#1a0347", "#2f057b", "#3d0f94", "#6441c1", "#7360f2", "#cfc6f7", "#e9e4fb", "#f5f3fb"] },
+      "violet-signal": { "role": "secondary", "displayName": "Signal Violet", "canonical": "#6441c1", "tonalRamp": ["#1a0347", "#2f057b", "#3d0f94", "#6441c1", "#7360f2", "#cfc6f7", "#e9e4fb", "#f5f3fb"] },
+      "lavender": { "role": "secondary", "displayName": "Lavender", "canonical": "#7360f2", "tonalRamp": ["#1a0347", "#2f057b", "#3d0f94", "#6441c1", "#7360f2", "#cfc6f7", "#e9e4fb", "#f5f3fb"] },
+      "lilac": { "role": "secondary", "displayName": "Lilac", "canonical": "#cfc6f7", "tonalRamp": ["#1a0347", "#2f057b", "#3d0f94", "#6441c1", "#7360f2", "#cfc6f7", "#e9e4fb", "#f5f3fb"] },
+      "lilac-wash": { "role": "secondary", "displayName": "Lilac Wash", "canonical": "#e9e4fb", "tonalRamp": ["#1a0347", "#2f057b", "#3d0f94", "#6441c1", "#7360f2", "#cfc6f7", "#e9e4fb", "#f5f3fb"] },
+      "ground": { "role": "neutral", "displayName": "Violet-White Ground", "canonical": "#f5f3fb", "tonalRamp": ["#1c0a3f", "#2f2252", "#4b3d6b", "#6e6390", "#9b93b5", "#cfcae0", "#e9e6f4", "#f5f3fb"] },
+      "paper": { "role": "neutral", "displayName": "Paper", "canonical": "#ffffff", "tonalRamp": ["#1c0a3f", "#2f2252", "#4b3d6b", "#6e6390", "#9b93b5", "#cfcae0", "#f5f3fb", "#ffffff"] },
+      "ink": { "role": "neutral", "displayName": "Violet Ink", "canonical": "#1c0a3f", "tonalRamp": ["#1c0a3f", "#2f2252", "#4b3d6b", "#6e6390", "#9b93b5", "#cfcae0", "#e9e6f4", "#f5f3fb"] },
+      "ink-soft": { "role": "neutral", "displayName": "Soft Ink", "canonical": "#4b3d6b", "tonalRamp": ["#1c0a3f", "#2f2252", "#4b3d6b", "#6e6390", "#9b93b5", "#cfcae0", "#e9e6f4", "#f5f3fb"] },
+      "coral": { "role": "tertiary", "displayName": "Meriity Coral", "canonical": "#fb4b51", "tonalRamp": ["#4a0f12", "#7d1a1f", "#b0262c", "#d92f36", "#fb4b51", "#fd8185", "#ffb3b5", "#ffe6e7"] },
+      "coral-deep": { "role": "tertiary", "displayName": "Deep Coral", "canonical": "#d92f36", "tonalRamp": ["#4a0f12", "#7d1a1f", "#b0262c", "#d92f36", "#fb4b51", "#fd8185", "#ffb3b5", "#ffe6e7"] },
+      "coral-soft": { "role": "tertiary", "displayName": "Soft Coral", "canonical": "#ffb3b5", "tonalRamp": ["#4a0f12", "#7d1a1f", "#b0262c", "#d92f36", "#fb4b51", "#fd8185", "#ffb3b5", "#ffe6e7"] },
+      "mint": { "role": "neutral", "displayName": "Status Mint", "canonical": "#2e9e74", "tonalRamp": ["#0b2a1f", "#124434", "#1b6a4f", "#2e9e74", "#55b994", "#8ed2b7", "#c4e9da", "#ebf7f2"] },
+      "amber": { "role": "neutral", "displayName": "Status Amber", "canonical": "#c27a12", "tonalRamp": ["#33200a", "#55360f", "#8a5810", "#c27a12", "#dc9a3a", "#ebbf7f", "#f6dfbb", "#fcf3e6"] },
+      "on-violet": { "role": "neutral", "displayName": "On-Violet", "canonical": "#f4f0ff", "tonalRamp": ["#1a0347", "#2f057b", "#6441c1", "#9a89d6", "#c4b8ec", "#ddd5f6", "#f4f0ff", "#ffffff"] },
+      "on-violet-soft": { "role": "neutral", "displayName": "On-Violet Soft", "canonical": "#c4b8ec", "tonalRamp": ["#1a0347", "#2f057b", "#6441c1", "#9a89d6", "#c4b8ec", "#ddd5f6", "#f4f0ff", "#ffffff"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "The hero statement; also the results title and the closing marquee at larger cuts." },
+      "headline": { "displayName": "Headline", "purpose": "Every section title, with one accent phrase in signal violet or lilac (coral only for the word trust)." },
+      "title": { "displayName": "Title", "purpose": "Card, stage, touchpoint, industry and service names." },
+      "body": { "displayName": "Body", "purpose": "Intros and card copy, held to 34 to 58ch." },
+      "label": { "displayName": "Label", "purpose": "Buttons, chips, footer heads and meta lines; sentence case, never uppercase." }
+    },
+    "shadows": [
+      { "name": "instrument-lift", "value": "0 40px 80px -30px rgba(10,0,40,0.6)", "purpose": "A white panel floating on deep violet (the Trust Check)." },
+      { "name": "card-stack", "value": "0 30px 60px -30px rgba(28,10,63,0.35)", "purpose": "Large stacked cards on the ground." },
+      { "name": "floating-chrome", "value": "0 12px 40px -12px rgba(47,5,123,0.25)", "purpose": "The nav pill once scrolled, with white 85% and backdrop blur." },
+      { "name": "menu-sheet", "value": "0 24px 60px -20px rgba(47,5,123,0.35)", "purpose": "The mobile menu sheet." }
+    ],
+    "motion": [
+      { "name": "ease-out-expo", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "The single easing for every transition and GSAP tween (expo.out)." },
+      { "name": "state-fast", "value": "300ms", "purpose": "Color and ring changes on buttons, chips and links." },
+      { "name": "state-travel", "value": "500ms", "purpose": "Arrow swaps, row slides, fills rising behind rows, nav background." },
+      { "name": "blur-reveal", "value": "opacity 0, yPercent 40, blur(14px) to rest; 1.3s; stagger 0.07s per word", "purpose": "Headline entrance, word by word, on scroll into view (top 85%)." },
+      { "name": "dial-draw", "value": "stroke-dashoffset 1200ms ease-out-expo", "purpose": "Trust Check score arc." },
+      { "name": "smooth-scroll", "value": "Lenis duration 1.15, easing 1 - 2^(-10t)", "purpose": "Inertial page scroll synced to ScrollTrigger; off under reduced motion." },
+      { "name": "marquee", "value": "linear, 28 to 40s per loop, pauses on hover", "purpose": "Client names and the closing statement band; static under reduced motion." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Coral pill for the main action; the arrow swaps on hover.",
+      "html": "<a class=\"ds-btn ds-btn-primary\" href=\"#\"><span>Get your free Trust Check</span><span class=\"ds-arrow\"><svg viewBox=\"0 0 20 20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 10h12M11 5l5 5-5 5\"/></svg><svg viewBox=\"0 0 20 20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 10h12M11 5l5 5-5 5\"/></svg></span></a>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; gap: 12px; border-radius: 9999px; padding: 14px 24px; font: 600 15px/1.25 'Hanken Grotesk', system-ui, sans-serif; text-decoration: none; transition: background-color 300ms, box-shadow 300ms, color 300ms; } .ds-btn-primary { background: #fb4b51; color: #fff; } .ds-btn-primary:hover { background: #d92f36; } .ds-btn:focus-visible { outline: 2px solid #fb4b51; outline-offset: 3px; } .ds-arrow { position: relative; width: 16px; height: 16px; overflow: hidden; } .ds-arrow svg { position: absolute; inset: 0; width: 16px; height: 16px; transition: transform 500ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-arrow svg:last-child { transform: translateX(-130%); } .ds-btn:hover .ds-arrow svg:first-child { transform: translateX(130%); } .ds-btn:hover .ds-arrow svg:last-child { transform: translateX(0); }"
+    },
+    {
+      "name": "Ink Button",
+      "kind": "button",
+      "refersTo": "button-ink",
+      "description": "Deep-violet pill for secondary actions inside white panels.",
+      "html": "<a class=\"ds-btn-ink\" href=\"#\">See how your business scores</a>",
+      "css": ".ds-btn-ink { display: inline-flex; align-items: center; border-radius: 9999px; padding: 12px 20px; background: #2f057b; color: #fff; font: 600 14px/1.25 'Hanken Grotesk', system-ui, sans-serif; text-decoration: none; transition: background-color 300ms; } .ds-btn-ink:hover { background: #3d0f94; } .ds-btn-ink:focus-visible { outline: 2px solid #fb4b51; outline-offset: 3px; }"
+    },
+    {
+      "name": "Ghost Button on Violet",
+      "kind": "button",
+      "refersTo": "button-ghost-light",
+      "description": "Ringed pill for the secondary action on a violet field.",
+      "html": "<div class=\"ds-violet-field\"><a class=\"ds-btn-ghost\" href=\"#\">Book a Growth Call</a></div>",
+      "css": ".ds-violet-field { background: #2f057b; padding: 24px; border-radius: 28px; } .ds-btn-ghost { display: inline-flex; border-radius: 9999px; padding: 14px 24px; color: #f4f0ff; box-shadow: inset 0 0 0 1px rgba(244,240,255,0.4); font: 600 15px/1.25 'Hanken Grotesk', system-ui, sans-serif; text-decoration: none; transition: box-shadow 300ms, background-color 300ms; } .ds-btn-ghost:hover { box-shadow: inset 0 0 0 1px #f4f0ff; background: rgba(255,255,255,0.05); } .ds-btn-ghost:focus-visible { outline: 2px solid #fb4b51; outline-offset: 3px; }"
+    },
+    {
+      "name": "Field on Violet",
+      "kind": "input",
+      "refersTo": "field-on-violet",
+      "description": "Translucent rounded field on the violet closing panel; coral ring on focus.",
+      "html": "<div class=\"ds-violet-form\"><input class=\"ds-field\" placeholder=\"Work email\" /></div>",
+      "css": ".ds-violet-form { background: #2f057b; padding: 24px; border-radius: 36px; } .ds-field { width: 100%; border: 0; border-radius: 16px; background: rgba(255,255,255,0.06); padding: 16px 20px; font: 400 16px 'Hanken Grotesk', system-ui, sans-serif; color: #f4f0ff; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.15); transition: box-shadow 300ms, background-color 300ms; } .ds-field::placeholder { color: rgba(196,184,236,0.7); } .ds-field:hover { box-shadow: inset 0 0 0 1px rgba(255,255,255,0.3); } .ds-field:focus { outline: none; background: rgba(255,255,255,0.09); box-shadow: inset 0 0 0 2px #fb4b51; }"
+    },
+    {
+      "name": "Navigation Pill",
+      "kind": "nav",
+      "refersTo": "nav",
+      "description": "Floating pill nav in its scrolled state: white 85%, backdrop blur, violet-tinted shadow.",
+      "html": "<nav class=\"ds-nav\"><span class=\"ds-nav-logo\">Meriity</span><ul><li><a href=\"#\">Framework</a></li><li><a href=\"#\">Services</a></li><li><a href=\"#\">Industries</a></li></ul><a class=\"ds-nav-cta\" href=\"#\">Book a Growth Call</a></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; border-radius: 9999px; padding: 8px 8px 8px 20px; background: rgba(255,255,255,0.85); backdrop-filter: blur(24px); box-shadow: 0 12px 40px -12px rgba(47,5,123,0.25); font-family: 'Hanken Grotesk', system-ui, sans-serif; } .ds-nav-logo { font: 800 20px 'Bricolage Grotesque', system-ui, sans-serif; color: #fb4b51; } .ds-nav ul { display: flex; gap: 4px; list-style: none; margin: 0; padding: 0; } .ds-nav ul a { display: block; border-radius: 9999px; padding: 8px 14px; font-size: 14.5px; font-weight: 500; color: #1c0a3f; text-decoration: none; transition: background-color 300ms; } .ds-nav ul a:hover { background: rgba(115,96,242,0.15); } .ds-nav ul a:focus-visible, .ds-nav-cta:focus-visible { outline: 2px solid #fb4b51; outline-offset: 3px; } .ds-nav-cta { border-radius: 9999px; padding: 12px 24px; background: #fb4b51; color: #fff; font-size: 15px; font-weight: 600; text-decoration: none; transition: background-color 300ms; } .ds-nav-cta:hover { background: #d92f36; }"
+    },
+    {
+      "name": "Rating Chip",
+      "kind": "chip",
+      "refersTo": "rating-chip",
+      "description": "Three-state Trust Check chip; selected takes its status tint.",
+      "html": "<div class=\"ds-chips\"><button class=\"ds-chip ds-chip-on-coral\">Needs work</button><button class=\"ds-chip\">Patchy</button><button class=\"ds-chip\">Solid</button></div>",
+      "css": ".ds-chips { display: flex; gap: 4px; } .ds-chip { border: 0; border-radius: 9999px; padding: 4px 10px; font: 600 12px 'Hanken Grotesk', system-ui, sans-serif; background: transparent; color: rgba(75,61,107,0.7); box-shadow: inset 0 0 0 1px transparent; cursor: pointer; transition: all 300ms; } .ds-chip:hover { box-shadow: inset 0 0 0 1px rgba(28,10,63,0.15); } .ds-chip:focus-visible { outline: 2px solid #fb4b51; outline-offset: 3px; } .ds-chip-on-coral { background: rgba(251,75,81,0.12); color: #d92f36; box-shadow: inset 0 0 0 1px rgba(251,75,81,0.3); }"
+    },
+    {
+      "name": "Trust Check Panel",
+      "kind": "card",
+      "refersTo": "panel",
+      "description": "Signature instrument: white 28px panel with score dial and touchpoint rows.",
+      "html": "<div class=\"ds-tc\"><div class=\"ds-tc-head\"><div><p class=\"ds-tc-title\">Your Business Pty Ltd</p><p class=\"ds-tc-sub\">Example Trust Check</p></div><svg class=\"ds-tc-dial\" viewBox=\"0 0 76 76\"><circle cx=\"38\" cy=\"38\" r=\"30\" fill=\"none\" stroke=\"#e9e4fb\" stroke-width=\"7\"/><circle cx=\"38\" cy=\"38\" r=\"30\" fill=\"none\" stroke=\"#fb4b51\" stroke-width=\"7\" stroke-linecap=\"round\" stroke-dasharray=\"188.5\" stroke-dashoffset=\"94\" transform=\"rotate(-90 38 38)\"/><text x=\"38\" y=\"44\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"800\" fill=\"#1c0a3f\">5</text></svg></div><div class=\"ds-tc-row\"><p class=\"ds-tc-name\">Website</p><p class=\"ds-tc-q\">Does it look current and credible?</p></div></div>",
+      "css": ".ds-tc { background: #fff; color: #1c0a3f; border-radius: 28px; padding: 24px; box-shadow: 0 40px 80px -30px rgba(10,0,40,0.6); font-family: 'Hanken Grotesk', system-ui, sans-serif; max-width: 420px; } .ds-tc-head { display: flex; justify-content: space-between; gap: 16px; } .ds-tc-title { margin: 0; font: 800 24px/0.95 'Bricolage Grotesque', system-ui, sans-serif; letter-spacing: -0.02em; } .ds-tc-sub { margin: 4px 0 0; font-size: 13px; font-weight: 500; color: #6441c1; } .ds-tc-dial { width: 76px; height: 76px; flex-shrink: 0; } .ds-tc-row { margin-top: 20px; border-radius: 16px; background: #f5f3fb; padding: 12px 16px; } .ds-tc-name { margin: 0; font-size: 15px; font-weight: 600; } .ds-tc-q { margin: 0; font-size: 13px; color: #4b3d6b; }"
+    },
+    {
+      "name": "Industry Row",
+      "kind": "custom",
+      "refersTo": "hairline-row",
+      "description": "Hairline list row; deep violet rises from the bottom on hover and a coral arrow slides in.",
+      "html": "<a class=\"ds-row\" href=\"#\"><span class=\"ds-row-fill\"></span><span class=\"ds-row-text\"><span class=\"ds-row-name\">Allied health</span><span class=\"ds-row-sub\">Clinics, physio, dental</span></span><svg class=\"ds-row-arrow\" viewBox=\"0 0 20 20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 10h12M11 5l5 5-5 5\"/></svg></a>",
+      "css": ".ds-row { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 24px; overflow: hidden; border-radius: 16px; padding: 24px 8px; border-bottom: 1px solid rgba(28,10,63,0.12); text-decoration: none; transition: padding 500ms cubic-bezier(0.16, 1, 0.3, 1); font-family: 'Hanken Grotesk', system-ui, sans-serif; } .ds-row:hover { padding: 24px 24px; } .ds-row-fill { position: absolute; inset: 0; border-radius: 16px; background: #2f057b; transform: scaleY(0); transform-origin: bottom; transition: transform 500ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-row:hover .ds-row-fill { transform: scaleY(1); } .ds-row-text { position: relative; } .ds-row-name { display: block; font: 800 28px/0.95 'Bricolage Grotesque', system-ui, sans-serif; letter-spacing: -0.02em; color: #1c0a3f; transition: color 500ms; } .ds-row-sub { display: block; margin-top: 4px; font-size: 15px; color: #4b3d6b; transition: color 500ms; } .ds-row:hover .ds-row-name { color: #f4f0ff; } .ds-row:hover .ds-row-sub { color: #c4b8ec; } .ds-row-arrow { position: relative; width: 20px; height: 20px; color: #fb4b51; opacity: 0; transform: translateX(-8px); transition: all 500ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-row:hover .ds-row-arrow { opacity: 1; transform: translateX(0); } .ds-row:focus-visible { outline: 2px solid #fb4b51; outline-offset: 3px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Trust Instrument",
+    "overview": "Meriity's world is two materials and one signal. A cool violet-white ground carries reading; deep Meriity violet fields own whole sections and are joined to the ground by soft curved shoulders rather than straight seams. Coral is the signal: it marks what to press and the single word the brand is about, and almost nothing else. Everything is set big. Headlines are heavy Bricolage Grotesque, tight-tracked, and arrive word by word out of blur, so the page reads as set type resolving into focus rather than as a stack of cards.\n\nDensity is low and confident: generous section padding, a 1320px container, one idea per band. Surfaces are large rounded panels (28 to 48px) that sit on the ground or on violet with soft, deep, violet-tinted shadows. Rules are hairlines. Motion is inertial and continuous (Lenis smooth scroll, scroll-scrubbed reveals, pinned horizontal tracks, sticky stacks), always on one expo-out curve, and always fully disabled under reduced motion with content visible by default.\n\nThe signature is something the visitor operates: the live Trust Check, a white panel of touchpoint rows with three-state chips and a score dial. Interaction, not illustration, carries the proof.",
+    "keyCharacteristics": [
+      "Light ground with deep-violet sections joined by curved notches.",
+      "Coral reserved for action, the word \"trust\", and focus.",
+      "Heavy Bricolage display type at -0.02em, resolving out of blur.",
+      "Large rounded panels (28 to 48px) and pill buttons; hairline rules between rows.",
+      "One easing curve, expo-out, for every transition and scroll effect."
+    ],
+    "rules": [
+      { "name": "The One Warm Voice Rule", "body": "Coral is the only warm color and it means \"act here\" or \"trust\". It never fills a section, a card background (the single exception is the \"More industries\" tile, which is itself a call to action), or a headline word other than \"trust\".", "section": "colors" },
+      { "name": "The Two Fields Rule", "body": "A section is either ground or deep violet, never a gradient between them. The seam between them is a curved notch filled with the next section's color.", "section": "colors" },
+      { "name": "The Every-Display-Is-Bold Rule", "body": "Anything set in Bricolage is weight 800 at -0.02em with balanced wrapping. There is no light or medium display; size alone creates the hierarchy.", "section": "typography" },
+      { "name": "The Resolve Rule", "body": "Section headlines enter word by word from blur(14px), 40% below, staggered 0.07s, on expo-out. The text is in the DOM and visible without JavaScript.", "section": "typography" },
+      { "name": "The Tinted Shadow Rule", "body": "Shadows are always violet or violet-black, never neutral grey, and always negative-spread.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do give each section one field, ground or deep violet, and join opposite fields with the curved notch.",
+      "Do keep coral to buttons, the word \"trust\", focus rings, and arrows that lead somewhere.",
+      "Do set every display line in Bricolage 800 at -0.02em, and let section headlines resolve out of blur on expo-out (cubic-bezier(0.16, 1, 0.3, 1)).",
+      "Do use pills for every action and 28 to 32px radii for panels and cards.",
+      "Do tint every shadow violet and pull it in with negative spread.",
+      "Do disable every scroll and reveal animation under prefers-reduced-motion, with content visible by default."
+    ],
+    "donts": [
+      "Don't put coral on headline words other than \"trust\", or use it as a section or card background (the \"More industries\" call-to-action tile is the only coral surface).",
+      "Don't blend violet into the ground with a gradient; the seam is a curve, not a fade.",
+      "Don't use grey or neutral black shadows, or hard offset shadows.",
+      "Don't set display type at a lighter weight or with positive tracking.",
+      "Don't lay out lists as rows of equal icon cards; use hairline rows, pinned tracks, or stacked panels.",
+      "Don't set labels in uppercase with wide tracking."
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+"use client";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { SplitText } from "gsap/SplitText";
+import { useGSAP } from "@gsap/react";
+
+// Register plugins once; import gsap from here everywhere.
+gsap.registerPlugin(ScrollTrigger, SplitText, useGSAP);
+
+export const EASE = "expo.out";
+export const REDUCED = "(prefers-reduced-motion: reduce)";
+
+export { gsap, ScrollTrigger, SplitText, useGSAP };
