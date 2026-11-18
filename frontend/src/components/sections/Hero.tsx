@@ -1,24 +1,16 @@
 "use client";
 import { useRef } from "react";
-import dynamic from "next/dynamic";
+import Image from "next/image";
 import { hero, heroVideo, footer } from "@/content/home";
-import { gsap, ScrollTrigger, useGSAP, EASE, REDUCED } from "@/lib/gsap";
+import { gsap, useGSAP, EASE, REDUCED } from "@/lib/gsap";
 import { onStingerLift } from "@/lib/stinger";
 import BlurReveal from "@/components/motion/BlurReveal";
 import RollText from "@/components/motion/RollText";
-import MarkCursor from "@/components/motion/MarkCursor";
 import { ArrowUpRight } from "@/components/ui/Icons";
-
-// Three.js stays out of the first JS payload; the scene fades in once loaded.
-const TrustAlignment = dynamic(() => import("@/components/hero/TrustAlignment"), { ssr: false });
+import PhotoDepth from "@/components/hero/PhotoDepth";
 
 export default function Hero() {
   const scope = useRef<HTMLElement>(null);
-  // 0 = scattered, 1 = the Meriity mark fully assembled. Driven by scroll while the hero is pinned.
-  const progress = useRef(0);
-  // Tall wrapper: the hero is CSS-sticky inside it, so scrolling through the extra height
-  // drives the alignment without GSAP moving any React-owned element.
-  const stage = useRef<HTMLDivElement>(null);
 
   useGSAP(
     () => {
@@ -27,32 +19,14 @@ export default function Hero() {
         // Starts once the logo stinger lifts, after the headline has begun to resolve.
         const fades = gsap.from(".hero-fade", { y: 24, opacity: 0, duration: 1.2, ease: EASE, stagger: 0.08, delay: 0.9, paused: true });
         const offLift = onStingerLift(() => fades.restart(true));
-        // Read-only scroll progress across the sticky hold (the 110svh spacer below the hero).
-        ScrollTrigger.create({
-          trigger: stage.current,
-          start: "top top",
-          end: "+=110%",
-          // The mark completes at ~75% of the hold, so the finished coral logo is seen
-          // for the last quarter before the hero releases.
-          onUpdate: (self) => (progress.current = Math.min(self.progress / 0.75, 1)),
-        });
         return () => offLift();
-
       });
     },
     { scope },
   );
 
   return (
-    // Layering: dark stage background (bottom) < shared 3D canvas (fixed, z-30) < hero copy (z-40).
-    // The canvas is fixed to the viewport so the mark can leave the hero and travel the page.
-    <div ref={stage} className="relative bg-[#070707]">
-      {heroVideo.mp4 || heroVideo.webm ? null : (
-        <TrustAlignment progress={progress} className="pointer-events-none fixed inset-0 z-30" />
-      )}
-      {/* After the hero, the mark becomes the mouse pointer (fine pointers only). */}
-      <MarkCursor />
-    <section id="top" ref={scope} className="sticky top-0 z-40 flex h-[max(560px,100svh)] flex-col overflow-hidden text-on-dark md:h-[max(680px,100svh)]">
+    <section id="top" ref={scope} className="relative z-40 flex h-[max(560px,100svh)] flex-col overflow-hidden bg-[#070707] text-on-dark md:h-[max(680px,100svh)]">
       {heroVideo.mp4 || heroVideo.webm ? (
         <video
           className="absolute inset-0 -z-10 size-full object-cover"
@@ -67,9 +41,34 @@ export default function Hero() {
           {heroVideo.webm && <source src={heroVideo.webm} type="video/webm" />}
           {heroVideo.mp4 && <source src={heroVideo.mp4} type="video/mp4" />}
         </video>
-      ) : null}
+      ) : (
+        <>
+          {/* Mobile: crisp static 9:16 vertical night cityscape with zero low-poly distortion */}
+          <Image
+            src="/hero/city-mobile.jpg"
+            alt="Melbourne skyline at night"
+            fill
+            priority
+            unoptimized
+            aria-hidden
+            className="absolute inset-0 -z-10 size-full object-cover object-center md:hidden"
+          />
+          {/* Tablet & Desktop: interactive 3D depth scene */}
+          <PhotoDepth
+            className="absolute inset-0 -z-10 size-full hidden md:block"
+            src="/hero/city.jpg"
+            depth="/hero/city-depth.png"
+            focal={[0.55, 0.35]}
+          />
+        </>
+      )}
+      {/* Legibility: darken behind the headline and links without crushing the city */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(7,7,7,0.45)_0%,rgba(7,7,7,0.15)_35%,rgba(7,7,7,0.75)_100%)] md:bg-[linear-gradient(90deg,rgba(7,7,7,0.72)_0%,rgba(7,7,7,0.38)_38%,rgba(7,7,7,0)_64%),linear-gradient(0deg,rgba(7,7,7,0.85)_0%,rgba(7,7,7,0)_32%)]"
+      />
       {/* Cinematic finish over the scene: soft vignette and film grain */}
-      <div aria-hidden className="pointer-events-none absolute inset-0 bg-[radial-gradient(130%_100%_at_60%_45%,transparent_60%,rgba(0,0,0,0.6)_100%)]" />
+      <div aria-hidden className="pointer-events-none absolute inset-0 hidden md:block bg-[radial-gradient(130%_100%_at_60%_45%,transparent_60%,rgba(0,0,0,0.6)_100%)]" />
       <div aria-hidden className="hero-grain pointer-events-none absolute -inset-[10%]" />
 
       <div className="hero-copy relative mx-auto flex w-full max-w-[1340px] flex-1 flex-col px-4 pt-24 pb-6 sm:px-6 md:pt-[63px] md:pb-[clamp(32px,5svh,64px)]">
@@ -88,7 +87,6 @@ export default function Hero() {
               {hero.punch[0]} <span className="text-coral">{hero.punch[1]}</span>
             </BlurReveal>
           </h1>
-
         </div>
 
         <div className="flex flex-wrap items-end gap-x-10 gap-y-6">
@@ -96,7 +94,7 @@ export default function Hero() {
         </div>
 
         <ul className="mt-6 grid grid-cols-2 gap-2 md:mt-9 md:grid-cols-4">
-          {[...footer.socials, { label: `Call ${footer.phone.label}`, href: footer.phone.href }].map((l) => (
+          {[...footer.socials, { label: footer.phone.label, href: footer.phone.href }].map((l) => (
             <li key={l.label} className="hero-fade">
               <a
                 href={l.href}
@@ -110,7 +108,5 @@ export default function Hero() {
         </ul>
       </div>
     </section>
-      <div aria-hidden className="h-[110svh]" />
-    </div>
   );
 }

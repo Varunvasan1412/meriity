@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Inter_Tight } from "next/font/google";
 import SmoothScroll from "@/components/motion/SmoothScroll";
 import Stinger from "@/components/motion/Stinger";
+import MarkCursor from "@/components/motion/MarkCursor";
 import "./globals.css";
 
 // next/font downloads and self-hosts it at build time.
@@ -21,6 +22,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       {/* Browser extensions (e.g. ColorZilla) add attributes to <body> before React loads. */}
       <body suppressHydrationWarning>
         <Stinger />
+        <MarkCursor />
         <SmoothScroll />
         {children}
       </body>

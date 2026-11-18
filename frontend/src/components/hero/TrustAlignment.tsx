@@ -378,6 +378,7 @@ export default function TrustAlignment({
     else frame(10);
 
     return () => {
+      setHandoff(1);
       offLift();
       cancelAnimationFrame(raf);
       window.removeEventListener("pointermove", onMove);

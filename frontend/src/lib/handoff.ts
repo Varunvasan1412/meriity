@@ -2,7 +2,7 @@
  * 0..1 cross-fade from the hero's 3D mark to the vector mouse-pointer mark.
  * Written by TrustAlignment each frame, read by MarkCursor each frame.
  */
-let value = 0;
+let value = 1;
 export const setHandoff = (v: number) => {
   value = v;
 };

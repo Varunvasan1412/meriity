@@ -1,0 +1,10 @@
+# Meriity static site (Next.js export with trailingSlash).
+DirectoryIndex index.html
+ErrorDocument 404 /404.html
+Options -Indexes
+
+# Send /about to /about/ (and the same for any other page folder).
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteCond %{REQUEST_URI} !/$
+RewriteRule ^(.*)$ /$1/ [R=301,L]

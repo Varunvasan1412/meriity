@@ -107,6 +107,8 @@ export default function TrustCheckSection() {
                       <div className="flex items-end gap-1.5" role="radiogroup" aria-label={`${t.check} rating`}>
                         {ratingLabels.map((label, v) => {
                           const filled = v <= r;
+                          // "Strong" (the top level) lights all three bars green.
+                          const strong = filled && r === ratingLabels.length - 1;
                           return (
                             <button
                               key={label}
@@ -119,9 +121,14 @@ export default function TrustCheckSection() {
                             >
                               <span
                                 className={`block w-full rounded-[3px] transition-[background-color,transform] duration-500 ease-out-expo group-hover/bar:scale-y-110 ${
-                                  filled ? "bg-coral" : "bg-stone group-hover:bg-white/25 group-hover/bar:bg-white/40"
+                                  strong ? "" : filled ? "bg-coral" : "bg-stone group-hover:bg-white/25 group-hover/bar:bg-white/40"
                                 }`}
-                                style={{ height: `${14 + v * 15}px`, transformOrigin: "bottom" }}
+                                style={{
+                                  height: `${14 + v * 15}px`,
+                                  transformOrigin: "bottom",
+                                  // Green appears instantly (no colour fade), so it can never be caught mid-way in coral.
+                                  ...(strong ? { backgroundColor: "#15803D", transitionProperty: "transform" } : null),
+                                }}
                               />
                             </button>
                           );

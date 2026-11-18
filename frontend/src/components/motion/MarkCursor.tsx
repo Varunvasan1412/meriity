@@ -63,9 +63,18 @@ export default function MarkCursor() {
     let angle = 0, angleTarget = 0, scale = 1, speed = 0;
     let prev = { ...target };
     let hovering = false, spread = 0;
+    let hasMoved = false;
+    let isInside = true;
     const history: { x: number; y: number; a: number }[] = [];
 
     const onMove = (e: PointerEvent) => {
+      if (!hasMoved) {
+        hasMoved = true;
+        pos.x = target.x = e.clientX;
+        pos.y = target.y = e.clientY;
+        prev = { x: e.clientX, y: e.clientY };
+      }
+      isInside = true;
       target.x = e.clientX;
       target.y = e.clientY;
       const dx = e.clientX - prev.x, dy = e.clientY - prev.y;
@@ -75,6 +84,16 @@ export default function MarkCursor() {
         prev = { x: e.clientX, y: e.clientY };
       }
       hovering = !!(e.target as Element | null)?.closest?.(INTERACTIVE);
+    };
+
+    const onLeave = () => {
+      isInside = false;
+      node.style.opacity = "0";
+      root.classList.remove("mark-cursor");
+    };
+
+    const onEnter = () => {
+      isInside = true;
     };
 
     // Click burst: tiny chevrons fly outward from the tip, each pointing the way it flies.
@@ -107,10 +126,13 @@ export default function MarkCursor() {
 
     window.addEventListener("pointermove", onMove, { passive: true });
     window.addEventListener("pointerdown", onDown, { passive: true });
+    document.addEventListener("pointerleave", onLeave);
+    document.addEventListener("pointerenter", onEnter);
 
     let raf = 0;
     const tick = () => {
       raf = requestAnimationFrame(tick);
+      if (!hasMoved || !isInside) return;
       const mix = getHandoff();
       // Swap the system arrow out only once the mark is mostly visible.
       root.classList.toggle("mark-cursor", mix > 0.5);
@@ -162,6 +184,8 @@ export default function MarkCursor() {
       cancelAnimationFrame(raf);
       window.removeEventListener("pointermove", onMove);
       window.removeEventListener("pointerdown", onDown);
+      document.removeEventListener("pointerleave", onLeave);
+      document.removeEventListener("pointerenter", onEnter);
       root.classList.remove("mark-cursor");
     };
   }, []);

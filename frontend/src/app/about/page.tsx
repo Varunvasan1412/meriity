@@ -7,7 +7,8 @@ import Vision from "@/components/about/Vision";
 import Method from "@/components/about/Method";
 import Values from "@/components/about/Values";
 import Feedback from "@/components/about/Feedback";
-import Team from "@/components/about/Team";
+// TEAM: switched off for now. Uncomment this import and <Team /> below to bring the section back.
+// import Team from "@/components/about/Team";
 import WorkWith from "@/components/about/WorkWith";
 
 export const metadata: Metadata = {
@@ -27,7 +28,8 @@ export default function About() {
         <Method />
         <Values />
         <Feedback />
-        <Team />
+        {/* TEAM: switched off for now (see the import above). */}
+        {/* <Team /> */}
         <WorkWith />
       </main>
       <Footer base="/" />
